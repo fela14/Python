@@ -519,4 +519,92 @@ meat team mate
 """
 print(anagrams)
 
+"""
+# The digit of life.
 
+date = input("Enter your birthday date (in the following format: YYYYMMDD or YYYYDDMM, 8 digits): ")
+if len(date) != 8 and not date.isdigit():
+    print("Invalid date")
+else:
+    while len(date) > 1:
+        the_sum = 0
+        for dig in date:
+            the_sum += int(dig)
+        print(date)
+        date = str(the_sum)
+    print("Your didgit of life is: ", date)
+
+"""
+"""
+# Find the word.
+
+word = input("Enter the word you wish to find: ").upper()
+strn = input("Enter the string you with to search through: ").upper()
+
+found = True
+start = 0
+
+for ch in word:
+    pos = strn.find(ch, start)
+    if pos < 0:
+        found = False
+        break
+    start = pos + 1
+if found:
+    print("Yes")
+else:
+    print("No")
+
+"""
+
+# Sudoku
+def checkset(digs):
+    return sorted(digs) == [chr(x + ord('0')) for x in range(1, 10)]
+
+rows = []
+
+# Input rows
+for r in range(9):
+    ok = False
+    while not ok:
+        row = input("Enter row #" + str(r + 1) + ": ")
+        ok = len(row) == 9 and row.isdigit()
+        if not ok:
+            print("Incorrect row data - 9 digits required")
+        else:
+            rows.append(row)  # Only append if input is valid
+
+ok = True
+
+# ✅ Check all rows
+for r in range(9):
+    if not checkset(rows[r]):
+        ok = False
+        break
+
+# ✅ Check all columns
+if ok: 
+    for c in range(9):
+        col = [rows[r][c] for r in range(9)]
+        if not checkset(col):
+            ok = False
+            break
+
+# ✅ Check 3x3 squares
+if ok:
+    for r in range(0, 9, 3):
+        for c in range(0, 9, 3):
+            square = ''
+            for i in range(3):
+                square += rows[r+i][c:c+3]
+            if not checkset(list(square)):
+                ok = False
+                break
+        if not ok:
+            break
+
+# ✅ Final result
+if ok:
+    print("YES")  # Valid Sudoku
+else:
+    print("NO")   # Invalid Sudoku

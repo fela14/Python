@@ -6,6 +6,10 @@ import sys
 
 __counter = 0
 
+
+for p in sys.path:
+    print(p)
+
 def suml(the_list):
     global __counter
     __counter += 1
@@ -29,5 +33,3 @@ if __name__ == '__main__':
     print(suml(my_list) == 15)
     print(prod(my_list) == 120)
 
-for p in sys.path:
-    print(p)

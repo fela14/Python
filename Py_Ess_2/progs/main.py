@@ -3,7 +3,7 @@ import modules.module as module
 from modules.module import suml, prod
 
 path.append("..\\modules")
-import module
+import modules
 
 zeroes = [0 for i in range(5)]
 ones = [1 for i in range(5)]
