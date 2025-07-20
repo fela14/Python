@@ -2,7 +2,14 @@
 
 """ module.py - an example of a python module """
 
+from sys import path
 import sys
+
+for p in sys.path:
+    print(p)
+
+path.append('..\\modules')
+
 
 __counter = 0
 
