@@ -8,8 +8,6 @@ import sys
 for p in sys.path:
     print(p)
 
-path.append('..\\modules')
-
 
 __counter = 0
 

@@ -121,7 +121,6 @@ except Exception as exc:
     print("I/O Error:", strerror(exc.errno)) 
 
 data = bytearray(10)
-
 try:
     binary_file = open("c:/users/Opeyemi/fela_Python/Py_Ess_2/files/file.bin", "rb")
     binary_file.readinto(data)
@@ -172,7 +171,7 @@ try:
 except IOError as e:
     print("Cannot open the source file:", strerror(e.errno))
     exit(e.errno)
-destname = input("Enter the destibation file name: ")
+destname = input("Enter the destination file name: ")
 try:
     dest = open(destname, 'wb')
 except Exception as e:
@@ -186,7 +185,7 @@ try:
     readin = src.readinto(buffer)
     while readin > 0:
         written = dest.write(buffer[:readin])
-        total += written
+        total += written             
         readin = src.readinto(buffer)
 except IOError as e:
     print("Cannot create the destination file: ", strerror(e.errno))
@@ -195,6 +194,8 @@ except IOError as e:
 print(total, "bytes successfully written")
 src.close()
 dest.close
+
+
 
 
 
