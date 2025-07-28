@@ -1,0 +1,3 @@
+Your Python script is intended to generate 10 unique state capital quizzes and their corresponding answer keys. However, the code has several bugs and logical issues that will prevent it from working correctly.
+
+Here's a detailed list of issues and fixes, followed by a corrected version of the code.

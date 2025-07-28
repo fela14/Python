@@ -96,7 +96,7 @@ cat_string = pprint.pformat(cat)
 
 # Step 3: Write it to a .py file as a variable assignment
 file_path = 'C:\\Users\\Opeyemi\\fela_Python\\Automation\\boring\\files\\cats.py'
-fileObj = open(file_path, 'w')  # <- Fix: open in write mode
+fileObj = open(file_path, 'w')  
 fileObj.write('cat = ' + cat_string + '\n')
 fileObj.close()
 

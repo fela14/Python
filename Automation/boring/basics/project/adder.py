@@ -1,4 +1,4 @@
-#! python3
+ #! python3
 # adder.py - Adds Wikipedia bullet points to the start
 # of each line of text on the clipboard
 

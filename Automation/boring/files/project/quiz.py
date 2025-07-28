@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # quiz.py - Creates quizzes with questions and answers in 
 # random order, along with answer key
-import os
-print(os.getcwd())
+
 import random
 
 capitals = {
