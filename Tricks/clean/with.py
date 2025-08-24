@@ -57,3 +57,5 @@ with Indenter() as indent:
         with indent:
             indent.print("Bonjour")
     indent.print('Hi')
+
+    

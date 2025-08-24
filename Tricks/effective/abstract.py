@@ -25,9 +25,14 @@ class Base(metaclass = ABCMeta):
         pass
 class Concrete(Base):
     def foo(self):
-        return('foo')
+        return('foo') 
     # def bar(self):
     #     return('bar')
+
     
 print(issubclass(Concrete, Base))
-c = Concrete()
+c = Concrete()  # If a class inherits from an abstract base class, 
+                # it must implement all abstract methods 
+                # before it can be instantiated.
+
+

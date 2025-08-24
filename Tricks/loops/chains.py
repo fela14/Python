@@ -16,7 +16,7 @@ def negative(seq):
         yield -i
 
 ch = negative(squared(integer()))
-print(ch)
+print(list(ch))
 
 # even better
 

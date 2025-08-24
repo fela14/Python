@@ -57,4 +57,4 @@ user_input = '{error.__init__.__globals__[SECRET]}'
 print(user_input.format(error=err))
 
 user_input = '${error.__init__.__globals__[SECRET]}'
-Template(user_input).substitute(error=err)
+# Template(user_input).substitute(error=err)    # ValueError: Invalid placeholder in string: line 1, col 1

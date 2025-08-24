@@ -1,3 +1,8 @@
+# SingleLeadingUnderscore“_var”:
+# Namingconventionin- dicating a name is meant for internal use. 
+# Generally not enforced by the Python interpreter 
+# (except in wildcard imports) and meant as a hint to the programmer only.
+
 class Test:
     def __init__(self):
         self.foo = 11
@@ -15,6 +20,9 @@ print(_internal_func())      # unless included in __all__ list in module
 from module import _secret_func   # would print when specifically
 print(_secret_func())             # importing private funcs
 
+  
+# Single Trailing Underscore “var_”: 
+# Used by convention to avoid naming conflicts with Python keywords.
 
 # def make_object(name, class):   # SyntaxError: invalid syntax
 #     pass
@@ -38,6 +46,10 @@ class Person:
 make_object('Alice', Animal)
 person = make_object('Bob', Person)
 
+
+# Double Leading Underscore “__var”:
+# Triggers name man- gling when used in a class context. 
+# Enforced by the Python in- terpreter.
 
 class Test:
     def __init__(self):
@@ -105,12 +117,21 @@ my_class = __Myclass()
 print(dir(my_class))
 print(my_class._Myclass__test())
 
+# Double Leading and Trailing Underscore “__var__”: 
+# In- dicates special methods defined by the Python language. 
+# Avoid this naming scheme for your own attributes.
 
 class PrefixPostfixTest:
     def __init__(self):
         self.__bam__ = 42
 print(PrefixPostfixTest().__bam__)
 
+
+# Single Underscore “_”: 
+# Sometimes used as a name for temporary 
+# or insignificant variables (“don’t care”). 
+# Also, it represents the result of the last expression 
+# in a Python REPL session.
 
 for _ in range(3):
     print('Hello world')
@@ -124,9 +145,3 @@ print(mileage)
 print(2+3)
 print(_)
 
-list()
-print(list())
-_.append(1)
-_.append(2)
-_.append(3)
-print(list())
