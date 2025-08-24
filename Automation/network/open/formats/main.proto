@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package networkstuff;
+
+// 👇 this line is required for Go output
+option go_package = "github.com/Opeyemi/fela_Python/automation/network/open/formats;formats";
+service RouterService {
+  rpc GetRouter(RouterRequest) returns (Router);
+}
+
+message RouterRequest {
+  int32 id = 1;
+}
+
+message Router {
+  int32 id = 1;
+  string hostname = 2;
+  repeated Interface interfaces = 3;
+}
+
+message Interface {
+  int32 id = 1;
+  string description = 2;
+}

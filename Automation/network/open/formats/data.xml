@@ -1,0 +1,15 @@
+<device>
+    <vendor>Cisco</vendor>
+    <model>Nexus 7700</model>
+    <osver>NXOS 6.1</osver>
+</device>
+
+<!-- Namespaces -->
+<root>
+    <e:device xmlns:c="https://example.org/enduserdevices">Palm Pilot</e:device>
+    <n:device xmlns:m="https://example.org/networkdevices">
+        <n:vendor>Cisco</n:vendor>
+        <n:model>Nexus 7700</n:model>
+        <n:osver>NXOS 6.1</n:osver>XML Schema Definition
+    </n:device>
+</root>
