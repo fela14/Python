@@ -1,0 +1,11 @@
+{% for iface in interface_list %}
+{% if iface %}
+interface {{ iface }}
+  {% if iface.name == "GigabitEthernet0/1" %}
+  switchport mode trunk
+  {% else %}
+  switchport access vlan 10
+  switchport mode access
+  {% endif %}
+{% endif %}
+{% endfor %}

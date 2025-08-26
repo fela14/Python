@@ -3,7 +3,7 @@ syntax = "proto3";
 package networkstuff;
 
 // 👇 this line is required for Go output
-option go_package = "github.com/Opeyemi/fela_Python/automation/network/open/formats;formats";
+option go_package = "./;formats";
 service RouterService {
   rpc GetRouter(RouterRequest) returns (Router);
 }

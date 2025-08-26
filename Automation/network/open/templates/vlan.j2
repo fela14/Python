@@ -1,5 +1,26 @@
-{% for n in range(10) %}
-interface GigabitEthernet{{ n+1 }}
-  description {{ interface.description }}
-  switchport access vlan {{ interface.vlan }}
+# {% for interface in interface_list %}
+# interface {{ interface.get('name', 'N/A') }}
+#   description {{ interface.get('desc', 'No description') }}
+#   {% if interface.uplink %}
+#   switchport mode trunk
+#   {% else %}
+#   switchport access vlan {{ interface.get('vlan', 'N/A') }}
+#   switchport mode access
+#   {% endif %}
+# {% endfor %}
+
+{% for interface in interface_list %}
+interface {{ interface.name }}
+  description {{ interface.desc|upper|reverse }}
+  {% if interface.uplink %}
+  switchport mode trunk
+  {% else %}
+  switchport access vlan {{ interface.vlan | default(1) }}
   switchport mode access
+  {% endif %}
+  speed {{ interface.name | get_interface_speed }}
+{% endfor %}
+
+# --- test of dict style lookup ---
+{% set int_desc = sw01.config.interfaces['ge0/1']['description'] %}
+ge0/1 description = {{ int_desc }}

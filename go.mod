@@ -1,3 +1,3 @@
-module github.com/Opeyemi/fela_Python
+module fela_Python
 
 go 1.24.6
