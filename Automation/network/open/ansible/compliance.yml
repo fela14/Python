@@ -1,0 +1,28 @@
+---
+- name: "PLAY 1 - VLAN COMPLIANCE"
+  hosts: eos
+  connection: "ansible.netcommon.network_cli"
+  gather_facts: no
+
+  tasks:
+    - name: "RETRIEVE VLANS JSON RESPONSE"
+      arista.eos.eos.command:
+        commands:
+          - "show vlan brief | json"
+
+    - name: "DEBUG VLAN AS JSON"
+      debug:
+        var: vlan_data 
+
+    - name: "CREATE EXISTING_VLANS FACT TO SIMPLIFY ACCESSING VLANS"
+      set_facts:
+        existing_vlan_ids: "{{ vlan_data.stdout.0.vlans.keys()}}"
+
+    - name: "DEBUG EXISTING VLAN IDS"
+      debug: 
+        var: existing_vlan_ids
+
+    - name: "PERFORM COMPLIANCE CHECKS"
+      assert:
+        that:
+          - "'20' in existing_vlan_ids"

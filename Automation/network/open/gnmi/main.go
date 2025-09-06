@@ -67,4 +67,19 @@ func main() {
 	checkError(err)
 	fmt.Println("=== Interface Config ===")
 	fmt.Println(string(out))
+
+	newDescription := "hello"
+	setReq, err := api.NewSetRequest(
+		api.Update(
+			path.ToGNMIPath("")
+			value.String(newDescription)
+		)
+	)
+	checkError(err)
+
+	setResp, err := tg.Set(ctx, setReq)
+	checkError(err)
+
+	out, err := io.ReadAll(setResp)
+	
 }
