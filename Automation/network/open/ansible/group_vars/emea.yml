@@ -1,0 +1,13 @@
+---
+snmp:
+  contact: Scott Grady
+  location: EMEA-IE
+  commnunities:
+    - community: public123
+      type: ro
+    - community: supersecure
+      type: rw
+    - community: private
+      type: rw
+    - community: secure
+      type: rw 

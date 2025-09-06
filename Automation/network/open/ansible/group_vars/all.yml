@@ -1,0 +1,10 @@
+---
+snmp:
+  version: 2c
+ntp_servers:
+  - 192.0.2.1
+  - 192.0.2.2
+dns_servers:
+  - 8.8.8.8
+  - 8.8.4.4
+syslog_server: 10.10.10.10

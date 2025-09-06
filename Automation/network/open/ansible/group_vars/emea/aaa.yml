@@ -1,0 +1,6 @@
+aaa:
+  authentication:
+    login: group-radius
+    enable: group-radius
+  authorization:
+    exec: group-radius

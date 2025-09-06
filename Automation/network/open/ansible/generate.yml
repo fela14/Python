@@ -1,0 +1,51 @@
+---
+- name: "PLAY 1 - GENERATE SNMP CONFIGURATIONS"
+  hosts: "all"
+  gather_facts: no
+  connection: "local"
+
+  tasks:
+    - name: "GENERATE CONFIGS FOR EACH OS"
+      template:
+        src: "./template/snmp/{{ ansible_network_os }}.j2"
+        dest: "./config/snmp/{{ inventory_hostname }}.cfg"
+
+- name: "PLAY 2 - ENSURE EOS SNMP CONFIGS ARE DEPLOYED"
+  hosts: "eos"
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: "DEPLOY CONFIGS FOR EOS"
+      arista.eos.eos_config:
+        src: "./configs/snmp/{{ inventory_hostname }}.cfg"
+        provider:
+          username: "{{ ansible_user}}"
+          password: "{{ ansible_password }}"
+          hosts: "{{ inventory_hostname }}"
+
+- name: "PLAY 3 - ENSURE JUNOS SNMP CONFIGS ARE DEPLOYED"
+  hosts: junos
+  connection: "ansible.netcommon.netconf"
+  gather_facts: no
+
+  tasks:
+    - name: "DEPLOY CONFIGS FOR JUNOS"
+      junipernetworks.junos.junos_config:
+      src: "./configs/snmp/{{ inventory_hostname }}.cfg"
+
+- name: "PLAY 4 - ENSURE CISCO (IOS,NXOX) SNMP CONFIGS ARE DEPLOYED"
+  hosts: "iosxe, nxos"
+  connection: "ansible.netcommon.network_cli"
+  gather_facts: no
+
+  tasks: 
+    - name: "DEPLOY CONFIGS FOR IOS"
+      cisco.ios.ios_config:
+        src: "./configs/snmp/{{ inventory_hostname }}.cfg"
+      when: ansible_network_os == "ios"
+
+    - name: "DEPLOY CONFIG FOR NXOS"
+      cisco.ios.ios_config:
+        src: "./configs/snmp/{{ inventory_hostname }}.cfg"
+      when: ansible_network_os == "ios"
