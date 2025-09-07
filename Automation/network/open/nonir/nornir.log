@@ -1,0 +1,10 @@
+2025-09-07 00:56:43,199 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 00:58:08,129 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:07:56,879 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:11:24,013 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:12:44,392 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:14:21,760 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:15:38,968 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:28:30,038 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:30:08,997 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
+2025-09-07 01:32:12,634 -  nornir.core -     INFO -        run() - Running task 'check_config' with args {'feature': 'ntp'} on 4 hosts
