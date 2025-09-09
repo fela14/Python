@@ -1,6 +1,6 @@
 ---
 csr1:
-  hostname: "csr1"
+  hostname: 10.10.20.48
   platform: "ios"
   groups:
     - "amers-cpe"
