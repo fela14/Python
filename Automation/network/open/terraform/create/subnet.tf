@@ -1,16 +1,4 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "eu-west-3"
-}
-
+/*
 # Create a new VPC
 resource "aws_vpc" "my_vpc" {
   cidr_block = "192.0.2.0/24"
@@ -45,3 +33,4 @@ resource "aws_subnet" "my_two_subnets" {
   vpc_id     = aws_vpc.my_vpc.id
   cidr_block = cidrsubnet(aws_vpc.my_vpc.cidr_block, 4, count.index)
 }
+*/
