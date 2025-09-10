@@ -1,22 +1,8 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-}
-
-provider "aws" {
-  profile = terraform.workspace
-  region  = "eu-west-3"
-}
-
 variable "cidr" {
   type = map(string)
 
   default = {
-    default = "10.0.0.0/24"       # fallback for default workspace
+    default = "10.0.0.0/24" # fallback for default workspace
     A       = "192.51.100.0/24"
     B       = "203.0.113.0/24"
   }
